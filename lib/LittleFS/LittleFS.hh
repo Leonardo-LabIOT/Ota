@@ -23,7 +23,7 @@ void setPASS(const char* _pass) { strcpy(pass, _pass); }
 void readFile() {
   StaticJsonDocument<255> doc;
   Serial.setTimeout(1000);
-  File file = SPIFFS.open("/configs.json", "r");
+  File file = SPIFFS.open("/.configs.json", "r");
   DeserializationError err = deserializeJson(doc, file);
   if (err) {
     Serial.println(err.c_str());
